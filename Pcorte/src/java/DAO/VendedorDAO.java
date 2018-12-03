@@ -37,10 +37,6 @@ public class VendedorDAO implements IBaseDatos<Vendedor> {
                 resultado = new Vendedor();
                 id = rs.getInt("id_vendedor");
                 resultado.setId_vendedor(id);
-                nombre = rs.getString("nombre");
-                resultado.setNombre(nombre);
-                apellido = rs.getString("apellido");
-                resultado.setApellido(apellido);
                 user = rs.getString("usuario");
                 resultado.setUsuario(user);
                 clave = rs.getString("clave");
@@ -77,9 +73,6 @@ public class VendedorDAO implements IBaseDatos<Vendedor> {
                 Vendedor registro = new Vendedor();
                 id = rs.getInt("id_vendedor");
                 registro.setId_vendedor(id);
-                nombre = rs.getString("nombre");
-                registro.setNombre(nombre);
-                apellido = rs.getString("apellido");
                 registro.setApellido(apellido);
                 user = rs.getString("usuario");
                 registro.setUsuario(user);
@@ -101,16 +94,13 @@ public class VendedorDAO implements IBaseDatos<Vendedor> {
     public boolean insert(Vendedor t) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " insert into Vendedor (id_vendedor,usuario,clave,nombre,apellido,id_sucursal ) values (?,?,?,?,?,?)";
+        String query = " insert into Vendedor (id_vendedor,usuario,clave) values (?,?,?)";
         PreparedStatement preparedStmt = null;
         try {
             preparedStmt = connection.prepareStatement(query);
             preparedStmt.setInt(1, t.getId_vendedor());
             preparedStmt.setString(2, t.getUsuario());
             preparedStmt.setString(3, t.getClave());
-            preparedStmt.setString(4, t.getNombre());
-            preparedStmt.setString(5, t.getApellido());
-            preparedStmt.setInt(6, 1);
             result = preparedStmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();

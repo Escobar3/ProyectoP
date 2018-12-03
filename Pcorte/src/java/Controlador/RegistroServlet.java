@@ -79,9 +79,8 @@ public class RegistroServlet extends HttpServlet {
             String apellido = request.getParameter("apellido");
             String user = request.getParameter("nombre");
             String clave = request.getParameter("apellido");
-            String tipo = request.getParameter("tipo");
             if (nombre != null && apellido != null) {
-                if (tipo.equalsIgnoreCase("Vendedor")) {
+               
                     System.out.println("ven");
                     try {
                         vend = new Vendedor(nombre, apellido, id, user, clave, 0);
@@ -90,14 +89,7 @@ public class RegistroServlet extends HttpServlet {
                     } catch (SQLException ex) {
                         Logger.getLogger(RegistroServlet.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                } else {
-                    Adm = new Administrador(id, user, clave, nombre, apellido);
-                    try {
-                        this.admon.insert(Adm);
-                    } catch (SQLException ex) {
-                        Logger.getLogger(RegistroServlet.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
+                
             }
 
             response.sendRedirect("Registro.jsp");

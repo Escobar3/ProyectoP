@@ -67,16 +67,13 @@
                 </tbody>
             </table>
             <center>
-                <select name="tipo">
-                    <option value="Vendedor">vendedor</option>
-                    <option value="Administrador">Administrador</option>
-                </select>
+              
 
                 <button type="submit" name="guardar" class="btn btn-default"> <b>Guardar</b> </button><button>  
             </center>
         </form>
     <center>
-        <a href = "login.jsp"> 
+        <a href = "vAdministrador.jsp"> 
             <button>   <b>Salir</b> </button>
         </a> 
 

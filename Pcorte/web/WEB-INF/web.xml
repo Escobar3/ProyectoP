@@ -40,6 +40,10 @@
         <servlet-name>RegistroServlet</servlet-name>
         <servlet-class>Controlador.RegistroServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProveedorServlet</servlet-name>
+        <servlet-class>Controlador.ProveedorServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Caja_Servlet</servlet-name>
         <url-pattern>/Caja_Servlet</url-pattern>
@@ -75,6 +79,10 @@
     <servlet-mapping>
         <servlet-name>RegistroServlet</servlet-name>
         <url-pattern>/RegistroServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProveedorServlet</servlet-name>
+        <url-pattern>/ProveedorServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

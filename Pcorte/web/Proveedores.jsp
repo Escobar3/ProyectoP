@@ -1,4 +1,4 @@
-<%-- 
+                                                                                                                                                                                                                                                                                                                                                                                                                                           <%-- 
     Document   : Inventario
     Created on : 1/12/2018, 11:46:46 AM
     Author     : Luis
@@ -26,14 +26,14 @@
                 var datos;
                 if (valOp == 'GU') {
                     console.log(valOp);
-                    datos = "txtValOpe=" + valOp 
+                    datos = "txtValOpe=" + valOp + "&producto=" + $("#producto").val()
                             + "&idp=" + $("#idp").val()
-                            + "&correo=" + $("#correo").val();
+                            + "&precio=" + $("#precio").val() + "&cantidad=" + $("#cantidad").val();
 
                 } else if (valOp = 'MU') {
                     datos = "txtValOpe=" + valOp;
                     $.ajax({
-                        url: "/Pcorte/ProveedorServlet",
+                        url: "/Pcorte/InventarioServlet2",
                         type: 'POST',
 
                         data: datos,
@@ -49,9 +49,10 @@
                                     destroy: true,
                                     empty: true,
                                     columns: [
-
+                                        {data: 'precio'},
                                         {data: 'id'},
-                                        {data: 'correo'},
+                                        {data: 'cantidad'},
+                                        {data: 'nombre'}
                                     ]
                                 });
                             }
@@ -62,7 +63,7 @@
                 }
 
                 $.ajax({
-                    url: "/Pcorte/RegistroServlet",
+                    url: "/Pcorte/InventarioServlet2",
                     type: 'POST',
 
                     data: datos,
@@ -81,9 +82,10 @@
                     destroy: true,
                     empty: true,
                     columns: [
-
+                        {data: 'precio'},
                         {data: 'id'},
-                        {data: 'correo'},
+                        {data: 'cantidad'},
+                        {data: 'nombre'}
                     ]
                 });
             });
@@ -117,32 +119,32 @@
 
     <body>
         <h1 style="text-align:center">INVENTARIO</h1>
+        <p>Nombre : <field> <input id="producto" type="text"> </field></p>
+<p>id :   <input  id="idp" type="text"> </p>
+<p>Precio :   <input id="precio" type="text"> </p>
+<p>cantidad:  <input  id="cantidad" type="text"> </p>
+<table id="TablaProductotos" class="display">
+    <tbody>
+        <tr>
+            <th>Nombre</th>
+            <th>ID</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <tbody>
+        <tr>
+            <th style="text-align:center">   <button id="registrar" onclick="procesarOperacion('GU', 'txtValOpe')">Registrar</button>
+                <button id="mostrar" onclick="procesarOperacion('MU', 'txtValOpe')">  mostrar </button> 
 
-        <p>id :   <input  id="idp" type="text"> </p>
-        <p>correo:   <input id="correo" type="text"> </p>
 
-        <table id="TablaProductotos" class="display">
-            <tbody>
-                <tr>
-                    <th>Nombre</th>
-                    <th>ID</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                </tr>
-            </tbody>
-        </table>
-        <table>
-            <tbody>
-                <tr>
-                    <th style="text-align:center">   <button id="registrar" onclick="procesarOperacion('GU', 'txtValOpe')">Registrar</button>
-                        <button id="mostrar" onclick="procesarOperacion('MU', 'txtValOpe')">  mostrar </button> 
-
-
-                        <a href = "vAdministrador.jsp"> 
-                            <button>salir</button> 
-                        </a>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+                <a href = "vAdministrador.jsp"> 
+                    <button>salir</button> 
+                </a>
+        </tr>
+    </tbody>
+</table>
+</body>
 </html>

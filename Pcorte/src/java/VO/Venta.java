@@ -21,6 +21,24 @@ public class Venta {
     private Vendedor vendedor;
     private Caja caja;
     private String data;
+    private boolean status;
+    private double saldo;
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 
     public List<Item_vent> getItem_vents() {
         return item_vents;
@@ -37,7 +55,7 @@ public class Venta {
     public void setData(String data) {
         this.data = data;
     }
-  
+
     public Caja getCaja() {
         return caja;
     }
@@ -85,7 +103,5 @@ public class Venta {
     public void setVendedor(Vendedor vendedor) {
         this.vendedor = vendedor;
     }
-
-   
 
 }

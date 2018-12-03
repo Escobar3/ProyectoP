@@ -34,6 +34,20 @@
                 <a href = "Inventario.jsp"> 
                     <button>INVENTARIO</button>
                 </a> 
+                <a href = "Registro.jsp"> 
+                    <button>Registr VEND</button>
+                </a> 
+                <a href = "Registro.jsp"> 
+                    <button>ASIGNAR TAREA</button>
+                </a> 
+                <a href = "Nomina.jsp"> 
+                    <button>NOMINA</button>
+                </a> 
+                <a href = "Proveedores.jsp"> 
+                    <button>PROVEEDORES</button>
+                </a> 
+
+
             </h1>
         </body>
     </html>
