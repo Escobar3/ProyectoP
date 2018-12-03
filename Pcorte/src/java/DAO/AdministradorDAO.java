@@ -16,7 +16,7 @@ import VO.Administrador;
 
 /**
  *
- * @author LUIS
+ * @author LwewewewewewUIS
  */
 public class AdministradorDAO implements IBaseDatos<Administrador> {
 
